@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import Birthday from "../models/BirthdayUser";
 
 const BirthdayController = {
-    index: async (req:Request, res:Response) => {
+    index: async (req: Request, res: Response) => {
         try{
 //             https://domain-name.com/birthday-user?userId=alamatemail@gmail.com;
             const userId = req.query.userId
@@ -17,10 +17,11 @@ const BirthdayController = {
                 message: "Data sent successfully.",
                 birthdays: birthdays
                 })
+
             } catch (error: any) {
                 return res.status(500).json({
                     status: 500,
-                    message: `Error fetching data: ${error.message}`
+                    message: `Error fetching users: ${error.message}`
                     })
                 }
         },
@@ -67,13 +68,13 @@ const BirthdayController = {
 
             const newBirthday = await Birthday.create({
                 ...req.body,
-                imageId: imageUrl
+                imageUrl: imageUrl
             });
 
             return res.status(201).json({
                 status: 201,
                 message: "Birthday created successfully.",
-                birthday: newBirthday,
+                newBirthday: newBirthday,
             });
         } catch (error: any) {
             return res.status(500).json({

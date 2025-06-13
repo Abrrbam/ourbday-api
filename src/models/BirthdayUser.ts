@@ -6,7 +6,7 @@ class BirthdayUser extends Model {
     public userId!: string; //Email Google
     public nama!: string;
     public tanggalLahir!: string;
-    public imageId!: string;
+    public imageUrl!: string;
     }
 
 BirthdayUser.init({
@@ -27,7 +27,7 @@ BirthdayUser.init({
         type: DataTypes.STRING,
         allowNull: false
         },
-    imageId: {
+    imageUrl: {
         type: DataTypes.STRING,
         allowNull: true
         }
@@ -38,6 +38,6 @@ BirthdayUser.init({
     }
 ).sync()
 .then(() => console.log("Model Synced"))
-.catch((error: any) => console.error("Error sync model: ${error.message}"));
+.catch((error: any) => console.error(`Error sync model: ${error.message}`));
 
 export default BirthdayUser;

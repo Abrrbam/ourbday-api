@@ -5,17 +5,17 @@ import upload from '../middleware/upload';
 
 const router = express.Router();
 
-router.get("birthday-user", BirthdayController.index);
-router.get("birthday-user/:id", BirthdayController.show);
+router.get("/birthday-users", BirthdayController.index);
+router.get("/birthday-user/:id", BirthdayController.show);
 
 // Add
-router.post("birthday-user", upload.single("image"), BirthdayController.store);
+router.post("/birthday-user", upload.single("image"), BirthdayController.store);
 
 // Update
-router.put("birthday-user/:id", upload.single("image"), BirthdayController.update);
+router.put("/birthday-user/:id", upload.single("image"), BirthdayController.update);
 
 // Delete
-router.delete("birthday-user/:id", BirthdayController.destroy);
+router.delete("/birthday-user/:id", BirthdayController.destroy);
 
 
 export default router;
