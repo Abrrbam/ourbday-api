@@ -2,6 +2,9 @@ import { Request, Response } from "express";
 import Birthday from "../models/BirthdayUser";
 
 const BirthdayController = {
+
+//     Seharusnya ini untuk menunjukkan data Birthday sesuai akun tersebut
+// Misalnya: abrahamputrabs@gmail.com
     index: async (req: Request, res: Response) => {
         try{
 //             https://domain-name.com/birthday-user?userId=alamatemail@gmail.com;
