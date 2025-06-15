@@ -3,8 +3,7 @@ import Birthday from "../models/BirthdayUser";
 
 const BirthdayController = {
 
-//     Seharusnya ini untuk menunjukkan data Birthday sesuai akun tersebut
-// Misalnya: abrahamputrabs@gmail.com
+// Menampilkan semua data Birthday berdasarkan userId yaitu alamat email
     index: async (req: Request, res: Response) => {
         try{
 //             https://domain-name.com/birthday-user?userId=alamatemail@gmail.com;
@@ -29,6 +28,8 @@ const BirthdayController = {
                 }
         },
 
+
+    // Menampilkan data Birthday berdasarkan ID
     show: async (req: Request, res: Response) => {
         try {
 // https://domain-name.com/birthday-user/1;
