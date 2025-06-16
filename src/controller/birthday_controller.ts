@@ -71,7 +71,7 @@ const BirthdayController = {
       });
 
       return res.status(201).json({
-        status: 201,
+        status: "success",
         message: "Birthday created successfully.",
         newBirthday,
       });
